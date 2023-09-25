@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Method</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      pre {
+        background-color: #24523b;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        background-color: #000000;
+        color: rgb(83, 161, 148);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #5a554f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Array Method</h1>
+
+    <p>----------</p>
+    <pre id="output"></pre>
+
+    <button onclick="getArrayLength()">Array length</button>
+    <button onclick="arrayToString()">Array toString()</button>
+    <button onclick="popArray()">Array pop()</button>
+
+    <script>
+      const myArray = ["Ford", "Honda", "Toyota", "Chev"];
+
+      function displayArray() {
+        document.getElementById("output").textContent = JSON.stringify(myArray);
+      }
+
+      function getArrayLength() {
+        const arrayLength = myArray.length;
+        alert(`Array length: ${arrayLength}`);
+        displayArray();
+      }
+
+      function arrayToString() {
+        const arrayString = myArray.toString();
+        alert(`Array as a string: ${arrayString}`);
+        displayArray();
+      }
+
+      function popArray() {
+        const poppedElement = myArray.pop();
+        if (poppedElement !== undefined) {
+          alert(`Popped element: ${poppedElement}`);
+        } else {
+          alert("Array is empty. Nothing to pop.");
+        }
+        displayArray();
+      }
+
+      displayArray();
+    </script>
+  </body>
+</html>
